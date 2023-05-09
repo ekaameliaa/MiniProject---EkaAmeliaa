@@ -1,0 +1,1143 @@
+{
+	"info": {
+		"_postman_id": "2104da8f-7ff7-4877-9871-9f19cdbba498",
+		"name": "Alta Shop API",
+		"description": "## Alta Shop API\n\nAPI Documentation for Alta Shop API. Complete with request and response examples.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18016950"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/products",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}products",
+									"host": [
+										"{{BASE_URL}}products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:17:28 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"Name\": \"logitech g29\",\n            \"Description\": \"steering wheel\",\n            \"Price\": 299,\n            \"Ratings\": 4,\n            \"Categories\": []\n        },\n        {\n            \"ID\": 2,\n            \"Name\": \"Sony PS5\",\n            \"Description\": \"play has no limits\",\n            \"Price\": 299,\n            \"Ratings\": 0,\n            \"Categories\": [\n                {\n                    \"ID\": 2,\n                    \"Name\": \"gaming\",\n                    \"Description\": \"for gaming purposes\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Sony 6000\",\r\n    \"description\":\"play has no limits\",\r\n    \"price\":599,\r\n    \"categories\":[\r\n        6\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/products",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Sony PS5\",\r\n    \"description\":\"play has no limits\",\r\n    \"price\":299,\r\n    \"categories\":[\r\n        2\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}products",
+									"host": [
+										"{{BASE_URL}}products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:14:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 2,\n        \"Name\": \"Sony PS5\",\n        \"Description\": \"play has no limits\",\n        \"Price\": 299,\n        \"Ratings\": 0,\n        \"Categories\": [\n            {\n                \"ID\": 2,\n                \"Name\": \"gaming\",\n                \"Description\": \"for gaming purposes\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/products/11278",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"products",
+								"11278"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://altashop-api.fly.dev/api/products/2",
+									"protocol": "https",
+									"host": [
+										"altashop-api",
+										"fly",
+										"dev"
+									],
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:18:00 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 2,\n        \"Name\": \"Sony PS5\",\n        \"Description\": \"play has no limits\",\n        \"Price\": 299,\n        \"Ratings\": 0,\n        \"Categories\": [\n            {\n                \"ID\": 2,\n                \"Name\": \"gaming\",\n                \"Description\": \"for gaming purposes\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}products/11419",
+							"host": [
+								"{{BASE_URL}}products"
+							],
+							"path": [
+								"11419"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}products/1",
+									"host": [
+										"{{BASE_URL}}products"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:18:46 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "14"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Assign a product rating",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"count\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}products/11665/ratings",
+							"host": [
+								"{{BASE_URL}}products"
+							],
+							"path": [
+								"11665",
+								"ratings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"count\":4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}products/2/ratings",
+									"host": [
+										"{{BASE_URL}}products"
+									],
+									"path": [
+										"2",
+										"ratings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:35:03 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 2,\n        \"Name\": \"Sony PS5\",\n        \"Description\": \"play has no limits\",\n        \"Price\": 299,\n        \"Ratings\": 4,\n        \"Categories\": [\n            {\n                \"ID\": 2,\n                \"Name\": \"gaming\",\n                \"Description\": \"for gaming purposes\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}products/11665/ratings",
+							"host": [
+								"{{BASE_URL}}products"
+							],
+							"path": [
+								"11665",
+								"ratings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}products/2/ratings",
+									"host": [
+										"{{BASE_URL}}products"
+									],
+									"path": [
+										"2",
+										"ratings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:35:30 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a comment for product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"the games are great including Gran Turismo 7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}products/2/comments",
+							"host": [
+								"{{BASE_URL}}products"
+							],
+							"path": [
+								"2",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"the games are great including Gran Turismo 7 but sadly GT4 is much better\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}products/2/comments",
+									"host": [
+										"{{BASE_URL}}products"
+									],
+									"path": [
+										"2",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:36:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 1,\n        \"Content\": \"the games are great including Gran Turismo 7 but sadly GT4 is much better\",\n        \"User\": null,\n        \"Product\": null,\n        \"Comment\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}products/2/comments",
+							"host": [
+								"{{BASE_URL}}products"
+							],
+							"path": [
+								"2",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}products/2/comments",
+									"host": [
+										"{{BASE_URL}}products"
+									],
+									"path": [
+										"2",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:38:19 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"Content\": \"the games are great including Gran Turismo 7 but sadly GT4 is much better\",\n            \"User\": null,\n            \"Product\": null,\n            \"Comment\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "## Features for Product Data\n\n*   Get all products.\n*   Get product by ID.\n*   Create a new product.\n*   Delete a product.\n*   Get product ratings.\n*   Assign a rating for product.\n*   Get product comments.\n*   Create a comment for product."
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ekaameliaputri17\",\r\n    \"password\":\"123123\",\r\n    \"fullname\":\"Eka Amelia Putri\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"someone@mail.com\",\r\n    \"password\":\"123123\",\r\n    \"fullname\":\"Firstname Lastname\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}auth/register",
+									"host": [
+										"{{BASE_URL}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:26:04 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 2,\n        \"Fullname\": \"Firstname Lastname\",\n        \"Email\": \"someone@mail.com\",\n        \"Password\": \"123123\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = JSON.parse(responseBody);\r",
+									"let userToken = jsonData.data;\r",
+									"\r",
+									"pm.collectionVariables.set(\"USER_TOKEN\", userToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"ekaameliaputri17@gmail.com\",\r\n    \"password\":\"123123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"someone@mail.com\",\r\n    \"password\":\"123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}auth/login",
+									"host": [
+										"{{BASE_URL}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:33:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJGdWxsbmFtZSI6IkZpcnN0bmFtZSBMYXN0bmFtZSIsIkVtYWlsIjoic29tZW9uZUBtYWlsLmNvbSJ9.qWDOcd2UDoTGumbak_fRlZZtf-H7va3sH2a339KGiKU\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get user information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/auth/info",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"auth",
+								"info"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}auth/info",
+									"host": [
+										"{{BASE_URL}}auth"
+									],
+									"path": [
+										"info"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 07:34:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 2,\n        \"Fullname\": \"Firstname Lastname\",\n        \"Email\": \"someone@mail.com\",\n        \"Password\": \"123123\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "## Authentication Features\n\n*   Register.\n*   Login.\n*   User info."
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create a new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[ {\r\n    \"product_id\":12887,\r\n    \"quantity\":3\r\n}\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/orders",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"product_id\":2,\r\n        \"quantity\":1\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}orders",
+									"host": [
+										"{{BASE_URL}}orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 08:36:16 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"User\": {\n                \"ID\": 2,\n                \"Fullname\": \"Firstname Lastname\",\n                \"Email\": \"someone@mail.com\",\n                \"Password\": \"123123\"\n            },\n            \"Product\": {\n                \"ID\": 2,\n                \"Name\": \"Sony PS5\",\n                \"Description\": \"play has no limits\",\n                \"Price\": 299,\n                \"Ratings\": 0,\n                \"Categories\": [\n                    {\n                        \"ID\": 2,\n                        \"Name\": \"gaming\",\n                        \"Description\": \"for gaming purposes\"\n                    }\n                ]\n            },\n            \"Quantity\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://altashop-api.fly.dev/api/orders",
+							"protocol": "https",
+							"host": [
+								"altashop-api",
+								"fly",
+								"dev"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}orders",
+									"host": [
+										"{{BASE_URL}}orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 08:36:54 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"Product\": \"Sony PS5\",\n            \"Price\": 299,\n            \"Quantity\": 1,\n            \"Subtotal\": 299\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get order by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}orders/10215",
+							"host": [
+								"{{BASE_URL}}orders"
+							],
+							"path": [
+								"10215"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}orders/1",
+									"host": [
+										"{{BASE_URL}}orders"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 Sep 2022 08:37:33 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ID\": 1,\n        \"User\": {\n            \"ID\": 2,\n            \"Fullname\": \"Firstname Lastname\",\n            \"Email\": \"someone@mail.com\",\n            \"Password\": \"123123\"\n        },\n        \"Product\": {\n            \"ID\": 2,\n            \"Name\": \"Sony PS5\",\n            \"Description\": \"play has no limits\",\n            \"Price\": 299,\n            \"Ratings\": 0,\n            \"Categories\": [\n                {\n                    \"ID\": 2,\n                    \"Name\": \"gaming\",\n                    \"Description\": \"for gaming purposes\"\n                }\n            ]\n        },\n        \"Quantity\": 1\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "## Features for Order\n\n*   Create a new order.\n*   Get all orders.\n*   Get order by ID."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{USER_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "https://altashop-api.fly.dev/api/",
+			"type": "string"
+		},
+		{
+			"key": "USER_TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
